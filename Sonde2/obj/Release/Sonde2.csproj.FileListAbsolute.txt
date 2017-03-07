@@ -1,0 +1,9 @@
+c:\users\danijel\documents\visual studio 2015\Projects\Sonde2\Sonde2\bin\Release\Sonde2.exe.config
+c:\users\danijel\documents\visual studio 2015\Projects\Sonde2\Sonde2\bin\Release\Sonde2.exe
+c:\users\danijel\documents\visual studio 2015\Projects\Sonde2\Sonde2\bin\Release\Sonde2.pdb
+c:\users\danijel\documents\visual studio 2015\Projects\Sonde2\Sonde2\obj\Release\Sonde2.Sonde2.resources
+c:\users\danijel\documents\visual studio 2015\Projects\Sonde2\Sonde2\obj\Release\Sonde2.Properties.Resources.resources
+c:\users\danijel\documents\visual studio 2015\Projects\Sonde2\Sonde2\obj\Release\Sonde2.csproj.GenerateResource.Cache
+c:\users\danijel\documents\visual studio 2015\Projects\Sonde2\Sonde2\obj\Release\Sonde2.exe
+c:\users\danijel\documents\visual studio 2015\Projects\Sonde2\Sonde2\obj\Release\Sonde2.pdb
+C:\Users\Danijel\Documents\Visual Studio 2015\Projects\Sonde2\Sonde2\obj\Release\Sonde2.csprojResolveAssemblyReference.cache
