@@ -28,10 +28,10 @@ namespace Sonde2
 
             
             // X acis
-            float distanceX = ((float)panel1.Height) / 10;
+            float distanceX = (float)panel1.Height / 10;
             for(int i = 0; i < 10; i++)
             {
-                g.DrawLine(Pens.Black, (float)(0 + graph_move), (float)((float)panel1.Height - (float)i * (float)distanceX), (float)((float)panel1.Width + graph_move), (float)((float)panel1.Height - (float)i * (float)distanceX + graph_move));
+                g.DrawLine(Pens.Black, (float)0, (float)((float)panel1.Height - (float)i * (float)distanceX), (float)panel1.Width, (float)((float)panel1.Height - (float)i * (float)distanceX + graph_move));
             }
             
             
@@ -39,7 +39,7 @@ namespace Sonde2
             float distanceY = (float)panel1.Width / 24;
             for(int i = 0; i < 24; i++)
             {
-                g.DrawLine(Pens.Black, (float)(i * (float)distanceY), (float)((float)panel1.Height), (float)(i * (float)distanceY), 0);
+                g.DrawLine(Pens.Black, (float)((float)i * (float)distanceY), (float)((float)panel1.Height), (float)((float)i * (float)distanceY), (float)0);
             }
             
 
@@ -123,36 +123,6 @@ namespace Sonde2
 
         }
 
-        private void panel1_Resize(object sender, EventArgs e)
-        {
-            Graphics p1 = panel1.CreateGraphics();
-            p1.Clear(Color.FloralWhite);
-            DrawCoordiantes(p1);
-            
-
-        }
-
-        private void panel2_Resize(object sender, EventArgs e)
-        {
-            Graphics p2 = panel2.CreateGraphics();
-            p2.Clear(Color.FloralWhite);
-            DrawCoordiantes(p2);
-        }
-
-        private void panel3_Resize(object sender, EventArgs e)
-        {
-            Graphics p3 = panel3.CreateGraphics();
-            p3.Clear(Color.FloralWhite);
-            DrawCoordiantes(p3);
-        }
-
-        private void panel4_Resize(object sender, EventArgs e)
-        {
-            Graphics p4 = panel4.CreateGraphics();
-            p4.Clear(Color.FloralWhite);
-            DrawCoordiantes(p4);
-        }
-
         private void bClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -168,6 +138,34 @@ namespace Sonde2
         {
             DateTime localDate = DateTime.Now;
             tbVremeDatum.Text = localDate.ToString();
+        }
+
+        private void panel1_Resize_1(object sender, EventArgs e)
+        {
+            Graphics p1 = panel1.CreateGraphics();
+            p1.Clear(Color.FloralWhite);
+            DrawCoordiantes(p1);
+        }
+
+        private void panel2_Resize_1(object sender, EventArgs e)
+        {
+            Graphics p2 = panel2.CreateGraphics();
+            p2.Clear(Color.FloralWhite);
+            DrawCoordiantes(p2);
+        }
+
+        private void panel3_Resize_1(object sender, EventArgs e)
+        {
+            Graphics p3 = panel3.CreateGraphics();
+            p3.Clear(Color.FloralWhite);
+            DrawCoordiantes(p3);
+        }
+
+        private void panel4_Resize_1(object sender, EventArgs e)
+        {
+            Graphics p4 = panel4.CreateGraphics();
+            p4.Clear(Color.FloralWhite);
+            DrawCoordiantes(p4);
         }
     }
 }
