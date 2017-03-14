@@ -18,9 +18,15 @@ namespace Sonde2
     {
         
         SerialPort comPort = new SerialPort();
+        DateTime dt = DateTime.Now;
+
+
+
         int number_of_ports = 100;
         Thread thread;
         private System.Object lockThis = new System.Object();
+
+        #region def
 
         const float graph_move = (float)0;
 
@@ -35,14 +41,36 @@ namespace Sonde2
         int probe2_value;
         int probe3_value;
         int probe4_value;
-        int[] temperature_probe1;
-        int[] temperature_probe2;
-        int[] temperature_probe3;
-        int[] temperature_probe4;
+        int[] values_probe1 = new int[6000];
+        int[] values_probe2 = new int[6000];
+        int[] values_probe3 = new int[6000];
+        int[] values_probe4 = new int[6000];
         string time_probe1;
         string time_probe2;
         string time_probe3;
         string time_probe4;
+        int i_probe1;
+        int i_probe2;
+        int i_probe3;
+        int i_probe4;
+        int add_value_to_graphic;
+        int hour;
+        int minutes;
+        int seconds;
+        int[] hours_probe1 = new int[6000];
+        int[] hours_probe2 = new int[6000];
+        int[] hours_probe3 = new int[6000];
+        int[] hours_probe4 = new int[6000];
+        int[] minutes_probe1 = new int[6000];
+        int[] minutes_probe2 = new int[6000];
+        int[] minutes_probe3 = new int[6000];
+        int[] minutes_probe4 = new int[6000];
+        int[] seconds_probe1 = new int[6000];
+        int[] seconds_probe2 = new int[6000];
+        int[] seconds_probe3 = new int[6000];
+        int[] seconds_probe4 = new int[6000];
+
+        #endregion
 
         #region Coordinate drawing methods
         public void drawCoordinateSystem()
@@ -84,18 +112,18 @@ namespace Sonde2
 
             
             // X acis
-            float distanceX = (float)panel1.Height / 10;
+            float distanceY = (float)panel1.Height / 10;
             for(int i = 0; i < 10; i++)
             {
-                g.DrawLine(Pens.Black, (float)0, (float)((float)panel1.Height - (float)i * (float)distanceX), (float)panel1.Width, (float)((float)panel1.Height - (float)i * (float)distanceX + graph_move));
+                g.DrawLine(Pens.Black, (float)0, (float)((float)panel1.Height - (float)i * (float)distanceY), (float)panel1.Width, (float)((float)panel1.Height - (float)i * (float)distanceY + graph_move));
             }
             
             
             // Y ordinate
-            float distanceY = (float)panel1.Width / 24;
+            float distanceX = (float)panel1.Width / 24;
             for(int i = 0; i < 24; i++)
             {
-                g.DrawLine(Pens.Black, (float)((float)i * (float)distanceY), (float)((float)panel1.Height), (float)((float)i * (float)distanceY), (float)0);
+                g.DrawLine(Pens.Black, (float)((float)i * (float)distanceX), (float)((float)panel1.Height), (float)((float)i * (float)distanceX), (float)0);
             }           
 
         }
@@ -131,9 +159,24 @@ namespace Sonde2
         #endregion
 
         #region drawing graphs
-        public void drawingGraphs(int[] temperature_probe, string time_probe, Graphics g)
-        {
-            Pen p = new Pen(Color.Red, 6);
+        public void drawingGraphs(int[] values_probe, int[] hour_probe, int[] minutes_probe, int i_probe,
+            Pen p, Graphics g)
+        {      
+
+            if (i_probe >= 2)
+            {
+                float distanceY = (float)panel1.Height / 10;
+                float distanceX = (float)panel1.Width / 24;
+                float point1Y = 43f * distanceY;//(float)(values_probe[i_probe - 1] / 10) * distanceY;
+                float point2Y = 22.3f * distanceY;// (float)(values_probe[i_probe] / 10) * distanceY;
+                float time1_proportion = (float)hour_probe[i_probe - 1] + (float)((float)((100 * minutes_probe[i_probe - 1]) / 60)/100);
+                float time2_proportion = (float)hour_probe[i_probe] + (float)((float)((100 * minutes_probe[i_probe]) / 60) /100);
+                float point1X = 15.38f * distanceX; //time1_proportion * distanceX;
+                float point2X = 20.32f * distanceX; //time2_proportion * distanceX;
+
+                g.DrawLine(Pens.Red, point1X, point1Y, point2X, point2Y);
+            }
+            
         }
         #endregion
 
@@ -143,6 +186,11 @@ namespace Sonde2
             start_monotoring = 0;
             timer_counter = 0;
             probe_chosen = 0;
+            add_value_to_graphic = 0;
+            i_probe1 = 0;
+            i_probe2 = 0;
+            i_probe3 = 0;
+            i_probe4 = 0;
 
             InitializeComponent();
             thread = new Thread(ThreadJob);
@@ -179,7 +227,9 @@ namespace Sonde2
             {
                 cbPort.Items.Add("COM" + Convert.ToString(i));
             }
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd.MM.yyyy";
+            dateTimePicker1.Value = new DateTime(dt.Year, dt.Month, dt.Day);
             bStart.Enabled = false;
             
 
@@ -240,20 +290,76 @@ namespace Sonde2
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime localDate = DateTime.Now;
-            tbVremeDatum.Text = localDate.ToString();
-           
+            tbVremeDatum.Text = localDate.ToString("dd.MM.yyyy.  HH:mm:ss");
+            hour = localDate.Hour;
+            minutes = localDate.Minute;
+            seconds = localDate.Second;
+            
+
             if (start_monotoring == 1)
             {
                 tbSonda1.Text = Convert.ToString(probe1_value);
                 tbSonda2.Text = Convert.ToString(probe2_value);
                 tbSonda3.Text = Convert.ToString(probe3_value);
                 tbSonda4.Text = Convert.ToString(probe4_value);
-                timer_counter++;
-                if(timer_counter >= 60)
+
+                if (add_value_to_graphic == 1)
                 {
-                    timer_counter = 0;
-                    
+                    values_probe1[i_probe1] = probe1_value;
+                    hours_probe1[i_probe1] = hour;
+                    minutes_probe1[i_probe1] = minutes;
+                    seconds_probe1[i_probe1] = seconds;
+
+                    Pen p1 = new Pen(Color.Red, 6);
+                    Graphics g1 = panel1.CreateGraphics();
+                    drawingGraphs(values_probe1, hours_probe1, minutes_probe1, i_probe1, p1, g1);
+
+                    i_probe1++;
+                    add_value_to_graphic = 0;
                 }
+                else if (add_value_to_graphic == 2)
+                {
+                    values_probe2[i_probe2] = probe2_value;
+                    hours_probe2[i_probe2] = hour;
+                    minutes_probe2[i_probe2] = minutes;
+                    seconds_probe2[i_probe2] = seconds;
+
+                    Pen p2 = new Pen(Color.Blue, 5);
+                    Graphics g2 = panel2.CreateGraphics();
+                    drawingGraphs(values_probe2, hours_probe2, minutes_probe2, i_probe2, p2, g2);
+
+                    i_probe2++;
+                    add_value_to_graphic = 0;
+                }
+                else if (add_value_to_graphic == 3)
+                {
+                    values_probe3[i_probe3] = probe3_value;
+                    hours_probe3[i_probe3] = hour;
+                    minutes_probe3[i_probe3] = minutes;
+                    seconds_probe3[i_probe3] = seconds;
+
+                    Pen p3 = new Pen(Color.Green, 4);
+                    Graphics g3 = panel1.CreateGraphics();
+                    drawingGraphs(values_probe3, hours_probe3, minutes_probe3, i_probe3, p3, g3);
+
+                    i_probe3++;
+                    add_value_to_graphic = 0;
+                }
+                else if (add_value_to_graphic == 4)
+                {
+                    values_probe4[i_probe4] = probe4_value;
+                    hours_probe4[i_probe4] = hour;
+                    minutes_probe4[i_probe4] = minutes;
+                    seconds_probe4[i_probe4] = seconds;
+
+                    Pen p4 = new Pen(Color.Yellow, 3);
+                    Graphics g4 = panel4.CreateGraphics();
+                    drawingGraphs(values_probe4, hours_probe4, minutes_probe4, i_probe4, p4, g4);
+
+                    i_probe4++;
+                    add_value_to_graphic = 0;
+                }
+
             }
         }
 
@@ -392,21 +498,25 @@ namespace Sonde2
             {
                 comPort.Write("1");
                 probe_chosen++;
+                add_value_to_graphic = 1;
             }
             else if (probe_chosen == 1)
             {
                 comPort.Write("2");
                 probe_chosen++;
+                add_value_to_graphic = 2;
             }
             else if (probe_chosen == 2)
             {
                 comPort.Write("3");
                 probe_chosen++;
+                add_value_to_graphic = 3;
             }
             else if (probe_chosen == 3)
             {
                 comPort.Write("4");
                 probe_chosen = 0;
+                add_value_to_graphic = 4;
             }
         }
     }
