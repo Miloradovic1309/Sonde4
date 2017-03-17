@@ -53,6 +53,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Settings";
             this.Text = "Podešavanja";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Settings_FormClosed);
             this.ResumeLayout(false);
 
         }

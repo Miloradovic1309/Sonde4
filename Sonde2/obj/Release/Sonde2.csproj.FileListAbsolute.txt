@@ -16,3 +16,13 @@ C:\Users\Danijel\Documents\Visual Studio 2015\Projects\Sonde4\Sonde2\obj\Release
 C:\Users\Danijel\Documents\Visual Studio 2015\Projects\Sonde4\Sonde2\obj\Release\Sonde2.Sonde2.resources
 C:\Users\Danijel\Documents\Visual Studio 2015\Projects\Sonde4\Sonde2\obj\Release\Sonde2.Properties.Resources.resources
 C:\Users\Danijel\Documents\Visual Studio 2015\Projects\Sonde4\Sonde2\obj\Release\Sonde2.csproj.GenerateResource.Cache
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\bin\Release\Sonde2.exe.config
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\obj\Release\Sonde2.exe
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\obj\Release\Sonde2.pdb
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\bin\Release\Sonde2.exe
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\bin\Release\Sonde2.pdb
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\obj\Release\Sonde2.csprojResolveAssemblyReference.cache
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\obj\Release\Sonde2.Sonde2.resources
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\obj\Release\Sonde2.Properties.Resources.resources
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\obj\Release\Sonde2.Settings.resources
+C:\Users\Danijel\Documents\Visual Studio 2015\My Projects\Sonde4\Sonde2\obj\Release\Sonde2.csproj.GenerateResource.Cache

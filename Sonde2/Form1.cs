@@ -20,6 +20,7 @@ namespace Sonde2
         SerialPort comPort = new SerialPort();
         Draw draw = new Draw();
 
+        System.IO.StreamWriter file;
 
         DateTime dt = DateTime.Now;
         StreamWriter textfileprobe1;
@@ -166,6 +167,7 @@ namespace Sonde2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cbPort.Text = Properties.Settings.Default.comPortSave;
             for (int i = 1; i <= number_of_ports; i++)
             {
                 cbPort.Items.Add("COM" + Convert.ToString(i));
@@ -193,6 +195,7 @@ namespace Sonde2
                     comPort.Close();
                     rbPort.Checked = false;
                     bStart.Enabled = false;
+                    cbPort.Enabled = true;
                 }
                 else
                 {
@@ -209,6 +212,7 @@ namespace Sonde2
                     
                     rbPort.Checked = true;
                     bStart.Enabled = true;
+                    cbPort.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -237,21 +241,24 @@ namespace Sonde2
 
         private void bClose_Click(object sender, EventArgs e)
         {
+            Settings settings = new Settings();
+            Properties.Settings.Default.comPortSave = cbPort.Text;
+            Properties.Settings.Default.Save();
             this.Close();
             thread.Abort();
-            textfileprobe1.Close();
-            textfileprobe2.Close();
-            textfileprobe3.Close();
-            textfileprobe4.Close();
+            settings.Close();
+            Application.Exit();
         }
 
         private void Sonde2_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Settings settings = new Settings();
+            Properties.Settings.Default.comPortSave = cbPort.Text;
+            Properties.Settings.Default.Save();
             thread.Abort();
-            textfileprobe1.Close();
-            textfileprobe2.Close();
-            textfileprobe3.Close();
-            textfileprobe4.Close();
+            settings.Close();
+            Application.Exit();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -284,7 +291,7 @@ namespace Sonde2
                     //   textfileprobe1.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":" 
                     //       + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe1_value));
 
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(path1, true))
+                    using (file = new System.IO.StreamWriter(path1, true))
                     {
                         file.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                            + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe1_value));
@@ -306,7 +313,7 @@ namespace Sonde2
 
                     //    textfileprobe2.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                     //        + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe2_value));
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(path2, true))
+                    using (file = new System.IO.StreamWriter(path2, true))
                     {
                         file.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                            + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe2_value));
@@ -329,7 +336,7 @@ namespace Sonde2
                     //  textfileprobe3.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                     //      + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe3_value));
 
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(path3, true))
+                    using (file = new System.IO.StreamWriter(path3, true))
                     {
                         file.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                            + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe3_value));
@@ -352,7 +359,7 @@ namespace Sonde2
                     //textfileprobe4.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                     //    + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe4_value));
 
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(path4, true))
+                    using (file = new System.IO.StreamWriter(path4, true))
                     {
                         file.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                            + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe4_value));

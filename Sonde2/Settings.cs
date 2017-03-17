@@ -16,5 +16,10 @@ namespace Sonde2
         {
             InitializeComponent();
         }
+
+        private void Settings_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
