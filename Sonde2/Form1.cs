@@ -18,6 +18,9 @@ namespace Sonde2
     {
         
         SerialPort comPort = new SerialPort();
+        Draw draw = new Draw();
+
+
         DateTime dt = DateTime.Now;
         StreamWriter textfileprobe1;
         StreamWriter textfileprobe2;
@@ -80,10 +83,11 @@ namespace Sonde2
         string path4;
         string now_or_previous_day;
         string current_directory = Directory.GetCurrentDirectory();
+        static float form_height;
+        static float form_width;
 
         #endregion
 
-        #region Coordinate drawing methods
         public void drawCoordinateSystem()
         {
             Graphics p1 = panel1.CreateGraphics();
@@ -102,95 +106,22 @@ namespace Sonde2
             p2.Clear(Color.FloralWhite);
             p3.Clear(Color.FloralWhite);
             p4.Clear(Color.FloralWhite);
-            drawCoordiantes(p1);
-            drawCoordiantes(p2);
-            drawCoordiantes(p3);
-            drawCoordiantes(p4);
 
-            drawNumbersY(p5);
-            drawNumbersY(p6);
-            drawNumbersY(p7);
-            drawNumbersY(p8);
+            draw.drawCoordiantes(p1, panel1.Height, panel1.Width);
+            draw.drawCoordiantes(p2, panel2.Height, panel2.Width);
+            draw.drawCoordiantes(p3, panel3.Height, panel3.Width);
+            draw.drawCoordiantes(p4, panel4.Height, panel4.Width);
 
-            drawNumbersX(p9);
-            drawNumbersX(p10);
-            drawNumbersX(p11);
-            drawNumbersX(p12);
+            draw.drawNumbersY(p5, panel5.Height);
+            draw.drawNumbersY(p6, panel6.Height);
+            draw.drawNumbersY(p7, panel7.Height);
+            draw.drawNumbersY(p8, panel8.Height);
+
+            draw.drawNumbersX(p9, panel9.Width);
+            draw.drawNumbersX(p10, panel10.Width);
+            draw.drawNumbersX(p11, panel11.Width);
+            draw.drawNumbersX(p12, panel12.Width);
         }
-
-        public void drawCoordiantes(Graphics g)
-        {
-
-            
-            // X acis
-            float distanceY = (float)panel1.Height / 10;
-            for(int i = 0; i < 10; i++)
-            {
-                g.DrawLine(Pens.Black, (float)0, (float)((float)panel1.Height - (float)i * (float)distanceY), (float)panel1.Width, (float)((float)panel1.Height - (float)i * (float)distanceY + graph_move));
-            }
-            
-            
-            // Y ordinate
-            float distanceX = (float)panel1.Width / 24;
-            for(int i = 0; i < 24; i++)
-            {
-                g.DrawLine(Pens.Black, (float)((float)i * (float)distanceX), (float)((float)panel1.Height), (float)((float)i * (float)distanceX), (float)0);
-            }
-
-
-        }
-        
-        public void drawNumbersY(Graphics g)
-        {
-            SolidBrush s = new SolidBrush(Color.Black);
-            FontFamily ff = new FontFamily("Arial");
-            System.Drawing.Font font = new System.Drawing.Font(ff, 8);
-
-            float distanceX = (float)panel5.Height / 10;
-
-            for (int i = 1; i < 10; i++)
-            {
-                g.DrawString(Convert.ToString(i * 10), font, s, new PointF(0, (float)((float)panel5.Height - (float)i * distanceX - 5)));
-            }
-        }
-
-        public void drawNumbersX(Graphics g)
-        {
-            SolidBrush s = new SolidBrush(Color.Black);
-            FontFamily ff = new FontFamily("Arial");
-            System.Drawing.Font font = new System.Drawing.Font(ff, 8);
-
-            float distanceY = (float)panel10.Width / 24;
-
-            for (int i = 1; i < 24; i++)
-            {
-                g.DrawString(Convert.ToString(i), font, s, new PointF((float)((float)i * distanceY - 5), 0));
-            }
-        }
-
-        #endregion
-
-        #region drawing graphs
-        public void drawingGraphs(float[] values_probe, int[] hour_probe, int[] minutes_probe, int i_probe,
-            Pen p, Graphics g)
-        {      
-
-            if (i_probe >= 2)
-            {
-                float distanceY = (float)((float)panel1.Height / 10);
-                float distanceX = (float)((float)panel1.Width / 24);
-                float point1Y = (float)((float)(values_probe[i_probe - 1] / 10) * distanceY);
-                float point2Y = (float)((float)(values_probe[i_probe] / 10) * distanceY);
-                float time1_proportion = (float)hour_probe[i_probe - 1] + (float)((float)((100 * minutes_probe[i_probe - 1]) / 60)/100);
-                float time2_proportion = (float)hour_probe[i_probe] + (float)((float)((100 * minutes_probe[i_probe]) / 60) /100);
-                float point1X = (float)(time1_proportion * distanceX);
-                float point2X = (float)(time2_proportion * distanceX);
-
-                g.DrawLine(Pens.Red, point1X, point1Y, point2X, point2Y);
-            }
-            
-        }
-        #endregion
 
         #region Constructor
         public Sonde2()
@@ -346,9 +277,9 @@ namespace Sonde2
                     minutes_probe1[i_probe1] = minutes;
                     seconds_probe1[i_probe1] = seconds;
 
-                    Pen p1 = new Pen(Color.Red, 6);
+                    Pen p1 = new Pen(Color.Red, 1);
                     Graphics g1 = panel1.CreateGraphics();
-                    drawingGraphs(values_probe1, hours_probe1, minutes_probe1, i_probe1, p1, g1);
+                    draw.drawingGraphs(values_probe1, hours_probe1, minutes_probe1, i_probe1, p1, g1, panel1.Height, panel1.Width);
 
                     //   textfileprobe1.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":" 
                     //       + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe1_value));
@@ -369,9 +300,9 @@ namespace Sonde2
                     minutes_probe2[i_probe2] = minutes;
                     seconds_probe2[i_probe2] = seconds;
 
-                    Pen p2 = new Pen(Color.Blue, 5);
+                    Pen p2 = new Pen(Color.Blue, 1);
                     Graphics g2 = panel2.CreateGraphics();
-                    drawingGraphs(values_probe2, hours_probe2, minutes_probe2, i_probe2, p2, g2);
+                    draw.drawingGraphs(values_probe2, hours_probe2, minutes_probe2, i_probe2, p2, g2, panel2.Height, panel2.Width);
 
                     //    textfileprobe2.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                     //        + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe2_value));
@@ -391,9 +322,9 @@ namespace Sonde2
                     minutes_probe3[i_probe3] = minutes;
                     seconds_probe3[i_probe3] = seconds;
 
-                    Pen p3 = new Pen(Color.Green, 4);
+                    Pen p3 = new Pen(Color.Green, 1);
                     Graphics g3 = panel3.CreateGraphics();
-                    drawingGraphs(values_probe3, hours_probe3, minutes_probe3, i_probe3, p3, g3);
+                    draw.drawingGraphs(values_probe3, hours_probe3, minutes_probe3, i_probe3, p3, g3, panel3.Height, panel3.Width);
 
                     //  textfileprobe3.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                     //      + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe3_value));
@@ -414,9 +345,9 @@ namespace Sonde2
                     minutes_probe4[i_probe4] = minutes;
                     seconds_probe4[i_probe4] = seconds;
 
-                    Pen p4 = new Pen(Color.Yellow, 3);
+                    Pen p4 = new Pen(Color.Yellow, 1);
                     Graphics g4 = panel4.CreateGraphics();
-                    drawingGraphs(values_probe4, hours_probe4, minutes_probe4, i_probe4, p4, g4);
+                    draw.drawingGraphs(values_probe4, hours_probe4, minutes_probe4, i_probe4, p4, g4, panel4.Height, panel4.Width);
 
                     //textfileprobe4.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
                     //    + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe4_value));
@@ -440,84 +371,84 @@ namespace Sonde2
         {
             Graphics p1 = panel1.CreateGraphics();
             p1.Clear(Color.FloralWhite);
-            drawCoordiantes(p1);
+            draw.drawCoordiantes(p1, panel1.Height, panel1.Width);
         }
 
         private void panel2_Resize_1(object sender, EventArgs e)
         {
             Graphics p2 = panel2.CreateGraphics();
             p2.Clear(Color.FloralWhite);
-            drawCoordiantes(p2);
+            draw.drawCoordiantes(p2, panel2.Height, panel2.Width);
         }
 
         private void panel3_Resize_1(object sender, EventArgs e)
         {
             Graphics p3 = panel3.CreateGraphics();
             p3.Clear(Color.FloralWhite);
-            drawCoordiantes(p3);
+            draw.drawCoordiantes(p3, panel3.Height, panel3.Width);
         }
 
         private void panel4_Resize_1(object sender, EventArgs e)
         {
             Graphics p4 = panel4.CreateGraphics();
             p4.Clear(Color.FloralWhite);
-            drawCoordiantes(p4);
+            draw.drawCoordiantes(p4, panel4.Height, panel4.Width);
         }
 
         private void panel5_Resize(object sender, EventArgs e)
         {
             Graphics p5 = panel5.CreateGraphics();
             p5.Clear(Color.FromArgb(240, 240, 240));
-            drawNumbersY(p5);
+            draw.drawNumbersY(p5, panel5.Height);
         }
 
         private void panel6_Resize(object sender, EventArgs e)
         {
             Graphics p6 = panel6.CreateGraphics();
             p6.Clear(Color.FromArgb(240, 240, 240));
-            drawNumbersY(p6);
+            draw.drawNumbersY(p6, panel6.Height);
         }
 
         private void panel7_Resize(object sender, EventArgs e)
         {
             Graphics p7 = panel7.CreateGraphics();
             p7.Clear(Color.FromArgb(240, 240, 240));
-            drawNumbersY(p7);
+            draw.drawNumbersY(p7, panel7.Height);
         }
 
         private void panel8_Resize(object sender, EventArgs e)
         {
             Graphics p8 = panel8.CreateGraphics();
             p8.Clear(Color.FromArgb(240, 240, 240));
-            drawNumbersY(p8);
+            draw.drawNumbersY(p8, panel8.Height);
         }
 
         private void panel9_Resize(object sender, EventArgs e)
         {
             Graphics p9 = panel9.CreateGraphics();
             p9.Clear(Color.FromArgb(240, 240, 240));
-            drawNumbersX(p9);
+            draw.drawNumbersX(p9, panel9.Width);
         }
 
         private void panel10_Resize(object sender, EventArgs e)
         {
             Graphics p10 = panel10.CreateGraphics();
             p10.Clear(Color.FromArgb(240, 240, 240));
-            drawNumbersX(p10);
+            draw.drawNumbersX(p10, panel10.Width);
         }
 
         private void panel11_Resize(object sender, EventArgs e)
         {
             Graphics p11 = panel11.CreateGraphics();
             p11.Clear(Color.FromArgb(240, 240, 240));
-            drawNumbersX(p11);
+            draw.drawNumbersX(p11, panel11.Width);
         }
 
         private void panel12_Resize(object sender, EventArgs e)
         {
             Graphics p12 = panel12.CreateGraphics();
             p12.Clear(Color.FromArgb(240, 240, 240));
-            drawNumbersX(p12);
+            draw.drawNumbersX(p12, panel12.Width);
         }
 
         private void Sonde2_Resize(object sender, EventArgs e)
@@ -593,6 +524,15 @@ namespace Sonde2
                     probe_chosen = 0;
                 }
             }
+        }
+
+        private void bPodesavanja_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            Sonde2 form1 = new Sonde2();
+            settings.Size = new Size(form1.Width - form1.Width/5, form1.Height - form1.Width/5);
+            settings.StartPosition = FormStartPosition.CenterScreen;
+            settings.ShowDialog();
         }
     }
 }

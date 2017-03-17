@@ -67,7 +67,7 @@
             this.lVremepocetkaOcitavanja = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bPodesavanja = new System.Windows.Forms.Button();
             this.bClose = new System.Windows.Forms.Button();
             this.bStart = new System.Windows.Forms.Button();
             this.bDraw = new System.Windows.Forms.Button();
@@ -614,7 +614,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.button1, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.bPodesavanja, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.bClose, 0, 3);
             this.tableLayoutPanel7.Controls.Add(this.bStart, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.bDraw, 0, 0);
@@ -629,17 +629,18 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(173, 148);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
-            // button1
+            // bPodesavanja
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bPodesavanja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(3, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 31);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Stop";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bPodesavanja.Location = new System.Drawing.Point(3, 77);
+            this.bPodesavanja.Name = "bPodesavanja";
+            this.bPodesavanja.Size = new System.Drawing.Size(167, 31);
+            this.bPodesavanja.TabIndex = 6;
+            this.bPodesavanja.Text = "Podešavanja";
+            this.bPodesavanja.UseVisualStyleBackColor = true;
+            this.bPodesavanja.Click += new System.EventHandler(this.bPodesavanja_Click);
             // 
             // bClose
             // 
@@ -696,7 +697,8 @@
             this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "Sonde2";
-            this.Text = "Sonde2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sonde4";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Sonde2_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Sonde2_Resize);
@@ -742,7 +744,7 @@
         private System.Windows.Forms.Button bStart;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button bClose;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bPodesavanja;
         private System.Windows.Forms.TextBox tbVremeDatum;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
