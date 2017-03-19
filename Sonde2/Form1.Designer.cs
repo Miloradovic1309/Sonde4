@@ -679,6 +679,7 @@
             this.bDraw.TabIndex = 7;
             this.bDraw.Text = "Crtaj";
             this.bDraw.UseVisualStyleBackColor = true;
+            this.bDraw.Click += new System.EventHandler(this.bDraw_Click);
             // 
             // timer1
             // 
