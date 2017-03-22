@@ -34,5 +34,101 @@ namespace Sonde2.Properties {
                 this["comPortSave"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public float width1 {
+            get {
+                return ((float)(this["width1"]));
+            }
+            set {
+                this["width1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string width2 {
+            get {
+                return ((string)(this["width2"]));
+            }
+            set {
+                this["width2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string width3 {
+            get {
+                return ((string)(this["width3"]));
+            }
+            set {
+                this["width3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string width4 {
+            get {
+                return ((string)(this["width4"]));
+            }
+            set {
+                this["width4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public global::System.Drawing.Color ColorProbe1 {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorProbe1"]));
+            }
+            set {
+                this["ColorProbe1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public global::System.Drawing.Color ColorProbe2 {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorProbe2"]));
+            }
+            set {
+                this["ColorProbe2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public global::System.Drawing.Color ColorProbe3 {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorProbe3"]));
+            }
+            set {
+                this["ColorProbe3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public global::System.Drawing.Color ColorProbe4 {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorProbe4"]));
+            }
+            set {
+                this["ColorProbe4"] = value;
+            }
+        }
     }
 }

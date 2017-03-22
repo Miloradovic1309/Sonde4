@@ -19,8 +19,10 @@ namespace Sonde2
         
         SerialPort comPort = new SerialPort();
         Draw draw = new Draw();
+        WorkWithFiles filework = new WorkWithFiles();
 
         System.IO.StreamWriter file;
+        System.IO.StreamReader fileR;
 
         DateTime dt = DateTime.Now;
         StreamWriter textfileprobe1;
@@ -86,6 +88,11 @@ namespace Sonde2
         string current_directory = Directory.GetCurrentDirectory();
         int real_time_graph;
         int b_start;
+
+        string sonda1text = "sonda1.txt";
+        string sonda2text = "sonda2.txt";
+        string sonda3text = "sonda3.txt";
+        string sonda4text = "sonda4.txt";
 
         float[] values_probe1_saved = new float[6000];
         float[] values_probe2_saved = new float[6000];
@@ -322,9 +329,6 @@ namespace Sonde2
                         draw.drawingGraphs(values_probe1, hours_probe1, minutes_probe1, i_probe1, p1, g1, panel1.Height, panel1.Width);
                     }
 
-                    //   textfileprobe1.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":" 
-                    //       + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe1_value));
-
                     using (file = new System.IO.StreamWriter(path1, true))
                     {
                         file.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
@@ -343,13 +347,11 @@ namespace Sonde2
 
                     if (real_time_graph == 1)
                     {
-                        Pen p2 = new Pen(Color.Blue, 1);
+                        Pen p2 = new Pen(Color.Red, 1.5f);
                         Graphics g2 = panel2.CreateGraphics();
                         draw.drawingGraphs(values_probe2, hours_probe2, minutes_probe2, i_probe2, p2, g2, panel2.Height, panel2.Width);
                     }
-
-                    //    textfileprobe2.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
-                    //        + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe2_value));
+                    
                     using (file = new System.IO.StreamWriter(path2, true))
                     {
                         file.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
@@ -368,13 +370,12 @@ namespace Sonde2
 
                     if (real_time_graph == 1)
                     {
-                        Pen p3 = new Pen(Color.Green, 1);
+                        Pen p3 = new Pen(Color.Red, 1);
                         Graphics g3 = panel3.CreateGraphics();
                         draw.drawingGraphs(values_probe3, hours_probe3, minutes_probe3, i_probe3, p3, g3, panel3.Height, panel3.Width);
                     }
 
-                    //  textfileprobe3.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
-                    //      + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe3_value));
+                   
 
                     using (file = new System.IO.StreamWriter(path3, true))
                     {
@@ -394,13 +395,12 @@ namespace Sonde2
 
                     if (real_time_graph == 1)
                     {
-                        Pen p4 = new Pen(Color.Yellow, 1);
+                        Pen p4 = new Pen(Color.Red, 1);
                         Graphics g4 = panel4.CreateGraphics();
                         draw.drawingGraphs(values_probe4, hours_probe4, minutes_probe4, i_probe4, p4, g4, panel4.Height, panel4.Width);
                     }
 
-                    //textfileprobe4.WriteLine(Convert.ToString(hour) + ":" + Convert.ToString(minutes) + ":"
-                    //    + Convert.ToString(seconds) + "|" + Convert.ToString((float)probe4_value));
+                   
 
                     using (file = new System.IO.StreamWriter(path4, true))
                     {
@@ -624,7 +624,18 @@ namespace Sonde2
             string[] line2 = new string[6000];
             string[] line3 = new string[6000];
             string[] line4 = new string[6000];
-            // Read the file and display it line by line.
+
+            /*Read the file and display it line by line*/
+            //line1 = filework1.getLines(fileR, current_directory, date_string, sonda1text);
+            //counter1 = filework2.getCounter(fileR, current_directory, date_string, sonda1text);
+            //line2 = filework2.getLines(fileR, current_directory, date_string, sonda2text);
+            //counter2 = filework1.getCounter(fileR, current_directory, date_string, sonda2text);
+            //line3 = filework.getLines(fileR, current_directory, date_string, sonda3text);
+            //counter3 = filework.getCounter(fileR, current_directory, date_string, sonda3text);
+            //line4 = filework.getLines(fileR, current_directory, date_string, sonda4text);
+            //counter4 = filework.getCounter(fileR, current_directory, date_string, sonda4text);
+
+
             System.IO.StreamReader file1 =
                new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda1.txt");
             while ((line = file1.ReadLine()) != null)
@@ -669,90 +680,81 @@ namespace Sonde2
             counter = 0;
             file4.Close();
 
-            string[] hours_string1 = new string[600];
-            string[] hours_string2 = new string[600];
-            string[] hours_string3 = new string[600];
-            string[] hours_string4 = new string[600];
-            string[] minutes_string1 = new string[600];
-            string[] minutes_string2 = new string[600];
-            string[] minutes_string3 = new string[600];
-            string[] minutes_string4 = new string[600];
-            string[] values_probe_string1 = new string[6000];
-            string[] values_probe_string2 = new string[6000];
-            string[] values_probe_string3 = new string[6000];
-            string[] values_probe_string4 = new string[6000];
+            //string[] hours_string1 = new string[6000];
+            //string[] hours_string2 = new string[6000];
+            //string[] hours_string3 = new string[6000];
+            //string[] hours_string4 = new string[6000];
+            //string[] minutes_string1 = new string[6000];
+            //string[] minutes_string2 = new string[6000];
+            //string[] minutes_string3 = new string[6000];
+            //string[] minutes_string4 = new string[6000];
+            //string[] values_probe_string1 = new string[6000];
+            //string[] values_probe_string2 = new string[6000];
+            //string[] values_probe_string3 = new string[6000];
+            //string[] values_probe_string4 = new string[6000];
 
-            for (int i=0; i<counter1; i++)
+            WorkWithFiles filework1 = new WorkWithFiles();
+            WorkWithFiles filework2 = new WorkWithFiles();
+            WorkWithFiles filework3 = new WorkWithFiles();
+            WorkWithFiles filework4 = new WorkWithFiles();
+
+            values_probe1_saved = filework1.takeProbeValuesFromFile(counter1, line1);
+            hours_probe1_saved = filework1.takeHoursFromFile(counter1, line1);
+            minutes_probe1_saved = filework1.takeMinutesFromFile(counter1, line1);
+
+            values_probe2_saved = filework2.takeProbeValuesFromFile(counter2, line2);
+            hours_probe2_saved = filework2.takeHoursFromFile(counter2, line2);
+            minutes_probe2_saved = filework2.takeMinutesFromFile(counter2, line2);
+
+            values_probe3_saved = filework3.takeProbeValuesFromFile(counter3, line3);
+            hours_probe3_saved = filework3.takeHoursFromFile(counter3, line3);
+            minutes_probe3_saved = filework3.takeMinutesFromFile(counter3, line3);
+
+            values_probe4_saved = filework4.takeProbeValuesFromFile(counter4, line4);
+            hours_probe4_saved = filework4.takeHoursFromFile(counter4, line4);
+            minutes_probe4_saved = filework4.takeMinutesFromFile(counter4, line4);
+
+            for (int i = 0; i < counter1; i++)
             {
-                int index_point = line1[i].IndexOf('|');
-                values_probe_string1[i] = line1[i].Substring(index_point+1);
-                int index_h = line1[i].IndexOf(':');
-                hours_string1[i] = line1[i].Substring(0, index_h);
-                string string_help1 = line1[i].Substring(index_h + 1);
-                int index_m = string_help1.IndexOf(':');
-                minutes_string1[i] = string_help1.Substring(0, index_m);
+                //int index_point = line1[i].IndexOf('|');
+                //values_probe_string1[i] = line1[i].Substring(index_point + 1);
+                //int index_h = line1[i].IndexOf(':');
+                //hours_string1[i] = line1[i].Substring(0, index_h);
+                //string string_help1 = line1[i].Substring(index_h + 1);
+                //int index_m = string_help1.IndexOf(':');
+                //minutes_string1[i] = string_help1.Substring(0, index_m);
 
-                values_probe1_saved[i] = float.Parse(values_probe_string1[i]);
-                hours_probe1_saved[i] = int.Parse(hours_string1[i]);
-                minutes_probe1_saved[i] = int.Parse(minutes_string1[i]);
+                //values_probe1_saved[i] = float.Parse(values_probe_string1[i]);
+                //hours_probe1_saved[i] = int.Parse(hours_string1[i]);
+                //minutes_probe1_saved[i] = int.Parse(minutes_string1[i]);
 
                 Pen p1 = new Pen(Color.Red, 1);
                 Graphics g1 = panel1.CreateGraphics();
-                draw.drawingGraphs(values_probe1_saved, hours_probe1_saved, minutes_probe1_saved, i, p1, g1, panel1.Height, panel1.Width);
+                draw.drawingGraphs(values_probe1_saved, hours_probe1_saved, minutes_probe1_saved, 
+                    i, p1, g1, panel1.Height, panel1.Width);
             }
             for (int i = 0; i < counter2; i++)
             {
-                int index_point = line2[i].IndexOf('|');
-                values_probe_string2[i] = line2[i].Substring(index_point + 1);
-                int index_h = line2[i].IndexOf(':');
-                hours_string2[i] = line2[i].Substring(0, index_h);
-                string string_help2 = line2[i].Substring(index_h + 1);
-                int index_m = string_help2.IndexOf(':');
-                minutes_string2[i] = string_help2.Substring(0, index_m);
 
-                values_probe2_saved[i] = float.Parse(values_probe_string2[i]);
-                hours_probe2_saved[i] = int.Parse(hours_string2[i]);
-                minutes_probe2_saved[i] = int.Parse(minutes_string2[i]);
-
-                Pen p2 = new Pen(Color.Blue, 1);
+                Pen p2 = new Pen(Color.Red, 1);
                 Graphics g2 = panel2.CreateGraphics();
-                draw.drawingGraphs(values_probe2_saved, hours_probe2_saved, minutes_probe2_saved, i, p2, g2, panel2.Height, panel2.Width);
+                draw.drawingGraphs(values_probe2_saved, hours_probe2_saved, minutes_probe2_saved, 
+                    i, p2, g2, panel2.Height, panel2.Width);
             }
             for (int i = 0; i < counter3; i++)
             {
-                int index_point = line3[i].IndexOf('|');
-                values_probe_string3[i] = line3[i].Substring(index_point + 1);
-                int index_h = line3[i].IndexOf(':');
-                hours_string3[i] = line3[i].Substring(0, index_h);
-                string string_help3 = line3[i].Substring(index_h + 1);
-                int index_m = string_help3.IndexOf(':');
-                minutes_string3[i] = string_help3.Substring(0, index_m);
 
-                values_probe3_saved[i] = float.Parse(values_probe_string3[i]);
-                hours_probe3_saved[i] = int.Parse(hours_string3[i]);
-                minutes_probe3_saved[i] = int.Parse(minutes_string3[i]);
-
-                Pen p3 = new Pen(Color.Green, 1);
+                Pen p3 = new Pen(Color.Red, 1);
                 Graphics g3 = panel3.CreateGraphics();
-                draw.drawingGraphs(values_probe3_saved, hours_probe3_saved, minutes_probe3_saved, i, p3, g3, panel3.Height, panel3.Width);
+                draw.drawingGraphs(values_probe3_saved, hours_probe3_saved, minutes_probe3_saved, 
+                    i, p3, g3, panel3.Height, panel3.Width);
             }
             for (int i = 0; i < counter4; i++)
             {
-                int index_point = line4[i].IndexOf('|');
-                values_probe_string4[i] = line4[i].Substring(index_point + 1);
-                int index_h = line4[i].IndexOf(':');
-                hours_string4[i] = line4[i].Substring(0, index_h);
-                string string_help4 = line4[i].Substring(index_h + 1);
-                int index_m = string_help4.IndexOf(':');
-                minutes_string4[i] = string_help4.Substring(0, index_m);
-
-                values_probe4_saved[i] = float.Parse(values_probe_string4[i]);
-                hours_probe4_saved[i] = int.Parse(hours_string4[i]);
-                minutes_probe4_saved[i] = int.Parse(minutes_string4[i]);
-
-                Pen p4 = new Pen(Color.Yellow, 1);
+                Pen p4 = new Pen(Color.Red, 1);
                 Graphics g4 = panel4.CreateGraphics();
-                draw.drawingGraphs(values_probe4_saved, hours_probe4_saved, minutes_probe4_saved, i, p4, g4, panel4.Height, panel4.Width);
+                draw.drawingGraphs(values_probe4_saved, hours_probe4_saved, minutes_probe4_saved, 
+                    i, p4, g4, panel4.Height, panel4.Width);
             }
 
 

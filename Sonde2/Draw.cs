@@ -68,7 +68,7 @@ namespace Sonde2
             Pen p, Graphics g, float panel_height, float panel_width)
         {
 
-            if (i_probe >= 2)
+            if (i_probe >= 1)
             {
                 float distanceY = (float)((float)panel_height / 10);
                 float distanceX = (float)((float)panel_width / 24);
