@@ -33,7 +33,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.dudWidth4 = new System.Windows.Forms.DomainUpDown();
+            this.cbWidth4 = new System.Windows.Forms.ComboBox();
             this.lWidth4 = new System.Windows.Forms.Label();
             this.lProbe4 = new System.Windows.Forms.Label();
             this.cbMeasuring4 = new System.Windows.Forms.CheckBox();
@@ -42,8 +42,8 @@
             this.lColor4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbWidth3 = new System.Windows.Forms.ComboBox();
             this.lWidth3 = new System.Windows.Forms.Label();
-            this.dudWidth3 = new System.Windows.Forms.DomainUpDown();
             this.lProbe3 = new System.Windows.Forms.Label();
             this.cbMeasuring3 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -51,7 +51,7 @@
             this.lColor3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.dudWidth2 = new System.Windows.Forms.DomainUpDown();
+            this.cbWidth2 = new System.Windows.Forms.ComboBox();
             this.lWidth2 = new System.Windows.Forms.Label();
             this.lProbe2 = new System.Windows.Forms.Label();
             this.cbMeasuring2 = new System.Windows.Forms.CheckBox();
@@ -60,7 +60,7 @@
             this.lColor2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.dudWidth1 = new System.Windows.Forms.DomainUpDown();
+            this.cbWidth1 = new System.Windows.Forms.ComboBox();
             this.lWidth1 = new System.Windows.Forms.Label();
             this.lProbe1 = new System.Windows.Forms.Label();
             this.cbMeasuring1 = new System.Windows.Forms.CheckBox();
@@ -171,7 +171,7 @@
             this.tableLayoutPanel14.ColumnCount = 2;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Controls.Add(this.dudWidth4, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.cbWidth4, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.lWidth4, 0, 0);
             this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 90);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
@@ -180,24 +180,17 @@
             this.tableLayoutPanel14.Size = new System.Drawing.Size(406, 25);
             this.tableLayoutPanel14.TabIndex = 4;
             // 
-            // dudWidth4
+            // cbWidth4
             // 
-            this.dudWidth4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbWidth4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dudWidth4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dudWidth4.Items.Add("0,5");
-            this.dudWidth4.Items.Add("1");
-            this.dudWidth4.Items.Add("1,5");
-            this.dudWidth4.Items.Add("2");
-            this.dudWidth4.Items.Add("2,5");
-            this.dudWidth4.Items.Add("3");
-            this.dudWidth4.Location = new System.Drawing.Point(206, 3);
-            this.dudWidth4.Name = "dudWidth4";
-            this.dudWidth4.Size = new System.Drawing.Size(197, 24);
-            this.dudWidth4.TabIndex = 3;
-            this.dudWidth4.Text = "domainUpDown1";
-            this.dudWidth4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbWidth4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbWidth4.FormattingEnabled = true;
+            this.cbWidth4.Location = new System.Drawing.Point(206, 3);
+            this.cbWidth4.Name = "cbWidth4";
+            this.cbWidth4.Size = new System.Drawing.Size(197, 26);
+            this.cbWidth4.TabIndex = 2;
             // 
             // lWidth4
             // 
@@ -313,14 +306,26 @@
             this.tableLayoutPanel12.ColumnCount = 2;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Controls.Add(this.cbWidth3, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.lWidth3, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.dudWidth3, 1, 0);
             this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 90);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(405, 25);
             this.tableLayoutPanel12.TabIndex = 4;
+            // 
+            // cbWidth3
+            // 
+            this.cbWidth3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbWidth3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbWidth3.FormattingEnabled = true;
+            this.cbWidth3.Location = new System.Drawing.Point(205, 3);
+            this.cbWidth3.Name = "cbWidth3";
+            this.cbWidth3.Size = new System.Drawing.Size(197, 26);
+            this.cbWidth3.TabIndex = 2;
             // 
             // lWidth3
             // 
@@ -335,25 +340,6 @@
             this.lWidth3.TabIndex = 1;
             this.lWidth3.Text = "Debljina";
             this.lWidth3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dudWidth3
-            // 
-            this.dudWidth3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dudWidth3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dudWidth3.Items.Add("0,5");
-            this.dudWidth3.Items.Add("1");
-            this.dudWidth3.Items.Add("1,5");
-            this.dudWidth3.Items.Add("2");
-            this.dudWidth3.Items.Add("2,5");
-            this.dudWidth3.Items.Add("3");
-            this.dudWidth3.Location = new System.Drawing.Point(205, 3);
-            this.dudWidth3.Name = "dudWidth3";
-            this.dudWidth3.Size = new System.Drawing.Size(197, 24);
-            this.dudWidth3.TabIndex = 2;
-            this.dudWidth3.Text = "domainUpDown1";
-            this.dudWidth3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lProbe3
             // 
@@ -455,7 +441,7 @@
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.dudWidth2, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.cbWidth2, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.lWidth2, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 90);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -464,24 +450,17 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(406, 25);
             this.tableLayoutPanel10.TabIndex = 4;
             // 
-            // dudWidth2
+            // cbWidth2
             // 
-            this.dudWidth2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbWidth2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dudWidth2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dudWidth2.Items.Add("0,5");
-            this.dudWidth2.Items.Add("1");
-            this.dudWidth2.Items.Add("1,5");
-            this.dudWidth2.Items.Add("2");
-            this.dudWidth2.Items.Add("2,5");
-            this.dudWidth2.Items.Add("3");
-            this.dudWidth2.Location = new System.Drawing.Point(206, 3);
-            this.dudWidth2.Name = "dudWidth2";
-            this.dudWidth2.Size = new System.Drawing.Size(197, 24);
-            this.dudWidth2.TabIndex = 3;
-            this.dudWidth2.Text = "domainUpDown1";
-            this.dudWidth2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbWidth2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbWidth2.FormattingEnabled = true;
+            this.cbWidth2.Location = new System.Drawing.Point(206, 3);
+            this.cbWidth2.Name = "cbWidth2";
+            this.cbWidth2.Size = new System.Drawing.Size(197, 26);
+            this.cbWidth2.TabIndex = 2;
             // 
             // lWidth2
             // 
@@ -597,7 +576,7 @@
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.dudWidth1, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.cbWidth1, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.lWidth1, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 90);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -606,24 +585,17 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(405, 25);
             this.tableLayoutPanel8.TabIndex = 3;
             // 
-            // dudWidth1
+            // cbWidth1
             // 
-            this.dudWidth1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbWidth1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dudWidth1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dudWidth1.Items.Add("0,5");
-            this.dudWidth1.Items.Add("1");
-            this.dudWidth1.Items.Add("1,5");
-            this.dudWidth1.Items.Add("2");
-            this.dudWidth1.Items.Add("2,5");
-            this.dudWidth1.Items.Add("3");
-            this.dudWidth1.Location = new System.Drawing.Point(205, 3);
-            this.dudWidth1.Name = "dudWidth1";
-            this.dudWidth1.Size = new System.Drawing.Size(197, 24);
-            this.dudWidth1.TabIndex = 3;
-            this.dudWidth1.Text = "domainUpDown1";
-            this.dudWidth1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbWidth1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbWidth1.FormattingEnabled = true;
+            this.cbWidth1.Location = new System.Drawing.Point(205, 3);
+            this.cbWidth1.Name = "cbWidth1";
+            this.cbWidth1.Size = new System.Drawing.Size(197, 26);
+            this.cbWidth1.TabIndex = 2;
             // 
             // lWidth1
             // 
@@ -738,6 +710,7 @@
             this.bClose.TabIndex = 1;
             this.bClose.Text = "Odustani";
             this.bClose.UseVisualStyleBackColor = true;
+            this.bClose.Click += new System.EventHandler(this.bClose_Click);
             // 
             // bSave
             // 
@@ -750,6 +723,7 @@
             this.bSave.TabIndex = 0;
             this.bSave.Text = "Sačuvaj";
             this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
             // Settings
             // 
@@ -760,6 +734,7 @@
             this.Name = "Settings";
             this.Text = "Podešavanja";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Settings_FormClosed);
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -807,7 +782,6 @@
         private System.Windows.Forms.Label lProbe1;
         private System.Windows.Forms.CheckBox cbMeasuring1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.DomainUpDown dudWidth4;
         private System.Windows.Forms.Label lWidth4;
         private System.Windows.Forms.CheckBox cbMeasuring4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
@@ -815,20 +789,17 @@
         private System.Windows.Forms.Label lColor4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.Label lWidth3;
-        private System.Windows.Forms.DomainUpDown dudWidth3;
         private System.Windows.Forms.CheckBox cbMeasuring3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.ComboBox cbColor3;
         private System.Windows.Forms.Label lColor3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.DomainUpDown dudWidth2;
         private System.Windows.Forms.Label lWidth2;
         private System.Windows.Forms.CheckBox cbMeasuring2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.ComboBox cbColor2;
         private System.Windows.Forms.Label lColor2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.DomainUpDown dudWidth1;
         private System.Windows.Forms.Label lWidth1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label lColor1;
@@ -836,5 +807,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Button bClose;
         private System.Windows.Forms.Button bSave;
+        private System.Windows.Forms.ComboBox cbWidth4;
+        private System.Windows.Forms.ComboBox cbWidth3;
+        private System.Windows.Forms.ComboBox cbWidth2;
+        private System.Windows.Forms.ComboBox cbWidth1;
     }
 }

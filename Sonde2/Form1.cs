@@ -324,7 +324,43 @@ namespace Sonde2
 
                     if (real_time_graph == 1)
                     {
-                        Pen p1 = new Pen(Color.Red, 1);
+                        Pen p1 = new Pen(Color.Red, Properties.Settings.Default.width1);
+                        if (Properties.Settings.Default.ColorProbe1 == "Crvena")
+                        {
+                            p1 = new Pen(Color.Red, Properties.Settings.Default.width1);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe1 == "Plava")
+                        {
+                            p1 = new Pen(Color.Blue, Properties.Settings.Default.width1);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe1 == "Zelena")
+                        {
+                            p1 = new Pen(Color.Green, Properties.Settings.Default.width1);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe1 == "Žuta")
+                        {
+                            p1 = new Pen(Color.Yellow, Properties.Settings.Default.width1);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe1 == "Žuta")
+                        {
+                            p1 = new Pen(Color.Yellow, Properties.Settings.Default.width1);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe1 == "Narandžasta")
+                        {
+                            p1 = new Pen(Color.Orange, Properties.Settings.Default.width1);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe1 == "Ljubičasta")
+                        {
+                            p1 = new Pen(Color.Violet, Properties.Settings.Default.width1);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe1 == "Braon")
+                        {
+                            p1 = new Pen(Color.Brown, Properties.Settings.Default.width1);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe1 == "Crna")
+                        {
+                            p1 = new Pen(Color.Black, Properties.Settings.Default.width1);
+                        }
                         Graphics g1 = panel1.CreateGraphics();
                         draw.drawingGraphs(values_probe1, hours_probe1, minutes_probe1, i_probe1, p1, g1, panel1.Height, panel1.Width);
                     }
@@ -347,7 +383,43 @@ namespace Sonde2
 
                     if (real_time_graph == 1)
                     {
-                        Pen p2 = new Pen(Color.Red, 1.5f);
+                        Pen p2 = new Pen(Color.Red, Properties.Settings.Default.width2);
+                        if (Properties.Settings.Default.ColorProbe2 == "Crvena")
+                        {
+                            p2 = new Pen(Color.Red, Properties.Settings.Default.width2);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe2 == "Plava")
+                        {
+                            p2 = new Pen(Color.Blue, Properties.Settings.Default.width2);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe2 == "Zelena")
+                        {
+                            p2 = new Pen(Color.Green, Properties.Settings.Default.width2);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe2 == "Žuta")
+                        {
+                            p2 = new Pen(Color.Yellow, Properties.Settings.Default.width2);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe2 == "Žuta")
+                        {
+                            p2 = new Pen(Color.Yellow, Properties.Settings.Default.width2);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe2 == "Narandžasta")
+                        {
+                            p2 = new Pen(Color.Orange, Properties.Settings.Default.width2);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe2 == "Ljubičasta")
+                        {
+                            p2 = new Pen(Color.Violet, Properties.Settings.Default.width2);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe2 == "Braon")
+                        {
+                            p2 = new Pen(Color.Brown, Properties.Settings.Default.width2);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe2 == "Crna")
+                        {
+                            p2 = new Pen(Color.Black, Properties.Settings.Default.width2);
+                        }
                         Graphics g2 = panel2.CreateGraphics();
                         draw.drawingGraphs(values_probe2, hours_probe2, minutes_probe2, i_probe2, p2, g2, panel2.Height, panel2.Width);
                     }
@@ -370,7 +442,43 @@ namespace Sonde2
 
                     if (real_time_graph == 1)
                     {
-                        Pen p3 = new Pen(Color.Red, 1);
+                        Pen p3 = new Pen(Color.Red, Properties.Settings.Default.width3);
+                        if (Properties.Settings.Default.ColorProbe3 == "Crvena")
+                        {
+                            p3 = new Pen(Color.Red, Properties.Settings.Default.width3);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe3 == "Plava")
+                        {
+                            p3 = new Pen(Color.Blue, Properties.Settings.Default.width3);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe3 == "Zelena")
+                        {
+                            p3 = new Pen(Color.Green, Properties.Settings.Default.width3);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe3 == "Žuta")
+                        {
+                            p3 = new Pen(Color.Yellow, Properties.Settings.Default.width3);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe3 == "Žuta")
+                        {
+                            p3 = new Pen(Color.Yellow, Properties.Settings.Default.width3);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe3 == "Narandžasta")
+                        {
+                            p3 = new Pen(Color.Orange, Properties.Settings.Default.width3);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe3 == "Ljubičasta")
+                        {
+                            p3 = new Pen(Color.Violet, Properties.Settings.Default.width3);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe3 == "Braon")
+                        {
+                            p3 = new Pen(Color.Brown, Properties.Settings.Default.width3);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe3 == "Crna")
+                        {
+                            p3 = new Pen(Color.Black, Properties.Settings.Default.width3);
+                        }
                         Graphics g3 = panel3.CreateGraphics();
                         draw.drawingGraphs(values_probe3, hours_probe3, minutes_probe3, i_probe3, p3, g3, panel3.Height, panel3.Width);
                     }
@@ -395,7 +503,43 @@ namespace Sonde2
 
                     if (real_time_graph == 1)
                     {
-                        Pen p4 = new Pen(Color.Red, 1);
+                        Pen p4 = new Pen(Color.Red, Properties.Settings.Default.width4);
+                        if (Properties.Settings.Default.ColorProbe4 == "Crvena")
+                        {
+                            p4 = new Pen(Color.Red, Properties.Settings.Default.width4);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe4 == "Plava")
+                        {
+                            p4 = new Pen(Color.Blue, Properties.Settings.Default.width4);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe4 == "Zelena")
+                        {
+                            p4 = new Pen(Color.Green, Properties.Settings.Default.width4);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe4 == "Žuta")
+                        {
+                            p4 = new Pen(Color.Yellow, Properties.Settings.Default.width4);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe4 == "Žuta")
+                        {
+                            p4 = new Pen(Color.Yellow, Properties.Settings.Default.width4);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe4 == "Narandžasta")
+                        {
+                            p4 = new Pen(Color.Orange, Properties.Settings.Default.width4);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe4 == "Ljubičasta")
+                        {
+                            p4 = new Pen(Color.Violet, Properties.Settings.Default.width4);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe4 == "Braon")
+                        {
+                            p4 = new Pen(Color.Brown, Properties.Settings.Default.width4);
+                        }
+                        else if (Properties.Settings.Default.ColorProbe4 == "Crna")
+                        {
+                            p4 = new Pen(Color.Black, Properties.Settings.Default.width4);
+                        }
                         Graphics g4 = panel4.CreateGraphics();
                         draw.drawingGraphs(values_probe4, hours_probe4, minutes_probe4, i_probe4, p4, g4, panel4.Height, panel4.Width);
                     }
@@ -516,33 +660,41 @@ namespace Sonde2
         {
             Thread.Sleep(150);
             //SerialPort sp = (SerialPort)sender;
-            int bytestoread = comPort.BytesToRead;
-            byte[] received_buffer = new byte[9];
-
-            comPort.Read(received_buffer, 0, bytestoread);
-
-            if ((received_buffer[0] == 0x21) && (received_buffer[8] == 0x1B))
+            try
             {
-                if(received_buffer[1] == ADR1)
+
+                int bytestoread = comPort.BytesToRead;
+                byte[] received_buffer = new byte[9];
+
+                comPort.Read(received_buffer, 0, bytestoread);
+
+                if ((received_buffer[0] == 0x21) && (received_buffer[8] == 0x1B))
                 {
-                    probe1_value = (float)(((float)received_buffer[3] * 100 + (float)received_buffer[4])/10);
-                    add_value_to_graphic = 1;
+                    if (received_buffer[1] == ADR1)
+                    {
+                        probe1_value = (float)(((float)received_buffer[3] * 100 + (float)received_buffer[4]) / 10);
+                        add_value_to_graphic = 1;
+                    }
+                    else if (received_buffer[1] == ADR2)
+                    {
+                        probe2_value = (float)(((float)received_buffer[3] * 100 + (float)received_buffer[4]) / 10);
+                        add_value_to_graphic = 2;
+                    }
+                    else if (received_buffer[1] == ADR3)
+                    {
+                        probe3_value = (float)(((float)received_buffer[3] * 100 + (float)received_buffer[4]) / 10);
+                        add_value_to_graphic = 3;
+                    }
+                    else if (received_buffer[1] == ADR4)
+                    {
+                        probe4_value = (float)(((float)received_buffer[3] * 100 + (float)received_buffer[4]) / 10);
+                        add_value_to_graphic = 4;
+                    }
+
                 }
-                else if(received_buffer[1] == ADR2)
-                {
-                    probe2_value = (float)(((float)received_buffer[3] * 100 + (float)received_buffer[4])/10);
-                    add_value_to_graphic = 2;
-                }
-                else if(received_buffer[1] == ADR3)
-                {
-                    probe3_value = (float)(((float)received_buffer[3] * 100 + (float)received_buffer[4])/10);
-                    add_value_to_graphic = 3;
-                }
-                else if(received_buffer[1] == ADR4)
-                {
-                    probe4_value = (float)(((float)received_buffer[3] * 100 + (float)received_buffer[4])/10);
-                    add_value_to_graphic = 4;
-                }                
+            }
+            catch(Exception ex)
+            {
 
             }
 
@@ -550,29 +702,36 @@ namespace Sonde2
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (comPort.IsOpen)
+            try
             {
+                if (comPort.IsOpen)
+                {
 
-                if (probe_chosen == 0)
-                {
-                    comPort.Write("1");
-                    probe_chosen++;                    
+                    if (probe_chosen == 0)
+                    {
+                        comPort.Write("1");
+                        probe_chosen++;
+                    }
+                    else if (probe_chosen == 1)
+                    {
+                        comPort.Write("2");
+                        probe_chosen++;
+                    }
+                    else if (probe_chosen == 2)
+                    {
+                        comPort.Write("3");
+                        probe_chosen++;
+                    }
+                    else if (probe_chosen == 3)
+                    {
+                        comPort.Write("4");
+                        probe_chosen = 0;
+                    }
                 }
-                else if (probe_chosen == 1)
-                {
-                    comPort.Write("2");
-                    probe_chosen++;
-                }
-                else if (probe_chosen == 2)
-                {
-                    comPort.Write("3");
-                    probe_chosen++;
-                }
-                else if (probe_chosen == 3)
-                {
-                    comPort.Write("4");
-                    probe_chosen = 0;
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Došlo je do greške. Proveri port");
             }
         }
 
@@ -635,126 +794,276 @@ namespace Sonde2
             //line4 = filework.getLines(fileR, current_directory, date_string, sonda4text);
             //counter4 = filework.getCounter(fileR, current_directory, date_string, sonda4text);
 
-
-            System.IO.StreamReader file1 =
-               new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda1.txt");
-            while ((line = file1.ReadLine()) != null)
+            try
             {
-                line1[counter] = line;
-                counter++;
+                System.IO.StreamReader file1 =
+                   new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda1.txt");
+                while ((line = file1.ReadLine()) != null)
+                {
+                    line1[counter] = line;
+                    counter++;
+                }
+                counter1 = counter;
+                counter = 0;
+                file1.Close();
+
+                System.IO.StreamReader file2 =
+                   new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda2.txt");
+                while ((line = file2.ReadLine()) != null)
+                {
+                    line2[counter] = line;
+                    counter++;
+                }
+                counter2 = counter;
+                counter = 0;
+                file2.Close();
+
+                System.IO.StreamReader file3 =
+                   new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda3.txt");
+                while ((line = file3.ReadLine()) != null)
+                {
+                    line3[counter] = line;
+                    counter++;
+                }
+                counter3 = counter;
+                counter = 0;
+                file3.Close();
+
+                System.IO.StreamReader file4 =
+                   new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda4.txt");
+                while ((line = file4.ReadLine()) != null)
+                {
+                    line4[counter] = line;
+                    counter++;
+                }
+                counter4 = counter;
+                counter = 0;
+                file4.Close();
+
+                //string[] hours_string1 = new string[6000];
+                //string[] hours_string2 = new string[6000];
+                //string[] hours_string3 = new string[6000];
+                //string[] hours_string4 = new string[6000];
+                //string[] minutes_string1 = new string[6000];
+                //string[] minutes_string2 = new string[6000];
+                //string[] minutes_string3 = new string[6000];
+                //string[] minutes_string4 = new string[6000];
+                //string[] values_probe_string1 = new string[6000];
+                //string[] values_probe_string2 = new string[6000];
+                //string[] values_probe_string3 = new string[6000];
+                //string[] values_probe_string4 = new string[6000];
+
+                WorkWithFiles filework1 = new WorkWithFiles();
+                WorkWithFiles filework2 = new WorkWithFiles();
+                WorkWithFiles filework3 = new WorkWithFiles();
+                WorkWithFiles filework4 = new WorkWithFiles();
+
+                values_probe1_saved = filework1.takeProbeValuesFromFile(counter1, line1);
+                hours_probe1_saved = filework1.takeHoursFromFile(counter1, line1);
+                minutes_probe1_saved = filework1.takeMinutesFromFile(counter1, line1);
+
+                values_probe2_saved = filework2.takeProbeValuesFromFile(counter2, line2);
+                hours_probe2_saved = filework2.takeHoursFromFile(counter2, line2);
+                minutes_probe2_saved = filework2.takeMinutesFromFile(counter2, line2);
+
+                values_probe3_saved = filework3.takeProbeValuesFromFile(counter3, line3);
+                hours_probe3_saved = filework3.takeHoursFromFile(counter3, line3);
+                minutes_probe3_saved = filework3.takeMinutesFromFile(counter3, line3);
+
+                values_probe4_saved = filework4.takeProbeValuesFromFile(counter4, line4);
+                hours_probe4_saved = filework4.takeHoursFromFile(counter4, line4);
+                minutes_probe4_saved = filework4.takeMinutesFromFile(counter4, line4);
+
+                for (int i = 0; i < counter1; i++)
+                {
+                    //int index_point = line1[i].IndexOf('|');
+                    //values_probe_string1[i] = line1[i].Substring(index_point + 1);
+                    //int index_h = line1[i].IndexOf(':');
+                    //hours_string1[i] = line1[i].Substring(0, index_h);
+                    //string string_help1 = line1[i].Substring(index_h + 1);
+                    //int index_m = string_help1.IndexOf(':');
+                    //minutes_string1[i] = string_help1.Substring(0, index_m);
+
+                    //values_probe1_saved[i] = float.Parse(values_probe_string1[i]);
+                    //hours_probe1_saved[i] = int.Parse(hours_string1[i]);
+                    //minutes_probe1_saved[i] = int.Parse(minutes_string1[i]);
+
+                    Pen p1 = new Pen(Color.Red, Properties.Settings.Default.width1);
+                    if (Properties.Settings.Default.ColorProbe1 == "Crvena")
+                    {
+                        p1 = new Pen(Color.Red, Properties.Settings.Default.width1);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe1 == "Plava")
+                    {
+                        p1 = new Pen(Color.Blue, Properties.Settings.Default.width1);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe1 == "Zelena")
+                    {
+                        p1 = new Pen(Color.Green, Properties.Settings.Default.width1);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe1 == "Žuta")
+                    {
+                        p1 = new Pen(Color.Yellow, Properties.Settings.Default.width1);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe1 == "Žuta")
+                    {
+                        p1 = new Pen(Color.Yellow, Properties.Settings.Default.width1);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe1 == "Narandžasta")
+                    {
+                        p1 = new Pen(Color.Orange, Properties.Settings.Default.width1);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe1 == "Ljubičasta")
+                    {
+                        p1 = new Pen(Color.Violet, Properties.Settings.Default.width1);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe1 == "Braon")
+                    {
+                        p1 = new Pen(Color.Brown, Properties.Settings.Default.width1);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe1 == "Crna")
+                    {
+                        p1 = new Pen(Color.Black, Properties.Settings.Default.width1);
+                    }
+                    Graphics g1 = panel1.CreateGraphics();
+                    draw.drawingGraphs(values_probe1_saved, hours_probe1_saved, minutes_probe1_saved,
+                        i, p1, g1, panel1.Height, panel1.Width);
+                }
+                for (int i = 0; i < counter2; i++)
+                {
+
+                    Pen p2 = new Pen(Color.Red, Properties.Settings.Default.width2);
+                    if (Properties.Settings.Default.ColorProbe2 == "Crvena")
+                    {
+                        p2 = new Pen(Color.Red, Properties.Settings.Default.width2);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe2 == "Plava")
+                    {
+                        p2 = new Pen(Color.Blue, Properties.Settings.Default.width2);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe2 == "Zelena")
+                    {
+                        p2 = new Pen(Color.Green, Properties.Settings.Default.width2);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe2 == "Žuta")
+                    {
+                        p2 = new Pen(Color.Yellow, Properties.Settings.Default.width2);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe2 == "Žuta")
+                    {
+                        p2 = new Pen(Color.Yellow, Properties.Settings.Default.width2);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe2 == "Narandžasta")
+                    {
+                        p2 = new Pen(Color.Orange, Properties.Settings.Default.width2);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe2 == "Ljubičasta")
+                    {
+                        p2 = new Pen(Color.Violet, Properties.Settings.Default.width2);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe2 == "Braon")
+                    {
+                        p2 = new Pen(Color.Brown, Properties.Settings.Default.width2);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe2 == "Crna")
+                    {
+                        p2 = new Pen(Color.Black, Properties.Settings.Default.width2);
+                    }
+                    Graphics g2 = panel2.CreateGraphics();
+                    draw.drawingGraphs(values_probe2_saved, hours_probe2_saved, minutes_probe2_saved,
+                        i, p2, g2, panel2.Height, panel2.Width);
+                }
+                for (int i = 0; i < counter3; i++)
+                {
+
+                    Pen p3 = new Pen(Color.Red, Properties.Settings.Default.width3);
+                    if (Properties.Settings.Default.ColorProbe3 == "Crvena")
+                    {
+                        p3 = new Pen(Color.Red, Properties.Settings.Default.width3);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe3 == "Plava")
+                    {
+                        p3 = new Pen(Color.Blue, Properties.Settings.Default.width3);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe3 == "Zelena")
+                    {
+                        p3 = new Pen(Color.Green, Properties.Settings.Default.width3);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe3 == "Žuta")
+                    {
+                        p3 = new Pen(Color.Yellow, Properties.Settings.Default.width3);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe3 == "Žuta")
+                    {
+                        p3 = new Pen(Color.Yellow, Properties.Settings.Default.width3);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe3 == "Narandžasta")
+                    {
+                        p3 = new Pen(Color.Orange, Properties.Settings.Default.width3);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe3 == "Ljubičasta")
+                    {
+                        p3 = new Pen(Color.Violet, Properties.Settings.Default.width3);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe3 == "Braon")
+                    {
+                        p3 = new Pen(Color.Brown, Properties.Settings.Default.width3);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe3 == "Crna")
+                    {
+                        p3 = new Pen(Color.Black, Properties.Settings.Default.width3);
+                    }
+                    Graphics g3 = panel3.CreateGraphics();
+                    draw.drawingGraphs(values_probe3_saved, hours_probe3_saved, minutes_probe3_saved,
+                        i, p3, g3, panel3.Height, panel3.Width);
+                }
+                for (int i = 0; i < counter4; i++)
+                {
+                    Pen p4 = new Pen(Color.Red, Properties.Settings.Default.width4);
+                    if (Properties.Settings.Default.ColorProbe4 == "Crvena")
+                    {
+                        p4 = new Pen(Color.Red, Properties.Settings.Default.width4);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe4 == "Plava")
+                    {
+                        p4 = new Pen(Color.Blue, Properties.Settings.Default.width4);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe4 == "Zelena")
+                    {
+                        p4 = new Pen(Color.Green, Properties.Settings.Default.width4);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe4 == "Žuta")
+                    {
+                        p4 = new Pen(Color.Yellow, Properties.Settings.Default.width4);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe4 == "Žuta")
+                    {
+                        p4 = new Pen(Color.Yellow, Properties.Settings.Default.width4);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe4 == "Narandžasta")
+                    {
+                        p4 = new Pen(Color.Orange, Properties.Settings.Default.width4);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe4 == "Ljubičasta")
+                    {
+                        p4 = new Pen(Color.Violet, Properties.Settings.Default.width4);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe4 == "Braon")
+                    {
+                        p4 = new Pen(Color.Brown, Properties.Settings.Default.width4);
+                    }
+                    else if (Properties.Settings.Default.ColorProbe4 == "Crna")
+                    {
+                        p4 = new Pen(Color.Black, Properties.Settings.Default.width4);
+                    }
+                    Graphics g4 = panel4.CreateGraphics();
+                    draw.drawingGraphs(values_probe4_saved, hours_probe4_saved, minutes_probe4_saved,
+                        i, p4, g4, panel4.Height, panel4.Width);
+                }
             }
-            counter1 = counter;
-            counter = 0;
-            file1.Close();
-
-            System.IO.StreamReader file2 =
-               new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda2.txt");
-            while ((line = file2.ReadLine()) != null)
+            catch(Exception ex)
             {
-                line2[counter] = line;
-                counter++;
-            }
-            counter2 = counter;
-            counter = 0;
-            file2.Close();
-
-            System.IO.StreamReader file3 =
-               new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda3.txt");
-            while ((line = file3.ReadLine()) != null)
-            {
-                line3[counter] = line;
-                counter++;
-            }
-            counter3 = counter;
-            counter = 0;
-            file3.Close();
-
-            System.IO.StreamReader file4 =
-               new System.IO.StreamReader(current_directory + "\\database\\" + date_string + "\\sonda4.txt");
-            while ((line = file4.ReadLine()) != null)
-            {
-                line4[counter] = line;
-                counter++;
-            }
-            counter4 = counter;
-            counter = 0;
-            file4.Close();
-
-            //string[] hours_string1 = new string[6000];
-            //string[] hours_string2 = new string[6000];
-            //string[] hours_string3 = new string[6000];
-            //string[] hours_string4 = new string[6000];
-            //string[] minutes_string1 = new string[6000];
-            //string[] minutes_string2 = new string[6000];
-            //string[] minutes_string3 = new string[6000];
-            //string[] minutes_string4 = new string[6000];
-            //string[] values_probe_string1 = new string[6000];
-            //string[] values_probe_string2 = new string[6000];
-            //string[] values_probe_string3 = new string[6000];
-            //string[] values_probe_string4 = new string[6000];
-
-            WorkWithFiles filework1 = new WorkWithFiles();
-            WorkWithFiles filework2 = new WorkWithFiles();
-            WorkWithFiles filework3 = new WorkWithFiles();
-            WorkWithFiles filework4 = new WorkWithFiles();
-
-            values_probe1_saved = filework1.takeProbeValuesFromFile(counter1, line1);
-            hours_probe1_saved = filework1.takeHoursFromFile(counter1, line1);
-            minutes_probe1_saved = filework1.takeMinutesFromFile(counter1, line1);
-
-            values_probe2_saved = filework2.takeProbeValuesFromFile(counter2, line2);
-            hours_probe2_saved = filework2.takeHoursFromFile(counter2, line2);
-            minutes_probe2_saved = filework2.takeMinutesFromFile(counter2, line2);
-
-            values_probe3_saved = filework3.takeProbeValuesFromFile(counter3, line3);
-            hours_probe3_saved = filework3.takeHoursFromFile(counter3, line3);
-            minutes_probe3_saved = filework3.takeMinutesFromFile(counter3, line3);
-
-            values_probe4_saved = filework4.takeProbeValuesFromFile(counter4, line4);
-            hours_probe4_saved = filework4.takeHoursFromFile(counter4, line4);
-            minutes_probe4_saved = filework4.takeMinutesFromFile(counter4, line4);
-
-            for (int i = 0; i < counter1; i++)
-            {
-                //int index_point = line1[i].IndexOf('|');
-                //values_probe_string1[i] = line1[i].Substring(index_point + 1);
-                //int index_h = line1[i].IndexOf(':');
-                //hours_string1[i] = line1[i].Substring(0, index_h);
-                //string string_help1 = line1[i].Substring(index_h + 1);
-                //int index_m = string_help1.IndexOf(':');
-                //minutes_string1[i] = string_help1.Substring(0, index_m);
-
-                //values_probe1_saved[i] = float.Parse(values_probe_string1[i]);
-                //hours_probe1_saved[i] = int.Parse(hours_string1[i]);
-                //minutes_probe1_saved[i] = int.Parse(minutes_string1[i]);
-
-                Pen p1 = new Pen(Color.Red, 1);
-                Graphics g1 = panel1.CreateGraphics();
-                draw.drawingGraphs(values_probe1_saved, hours_probe1_saved, minutes_probe1_saved, 
-                    i, p1, g1, panel1.Height, panel1.Width);
-            }
-            for (int i = 0; i < counter2; i++)
-            {
-
-                Pen p2 = new Pen(Color.Red, 1);
-                Graphics g2 = panel2.CreateGraphics();
-                draw.drawingGraphs(values_probe2_saved, hours_probe2_saved, minutes_probe2_saved, 
-                    i, p2, g2, panel2.Height, panel2.Width);
-            }
-            for (int i = 0; i < counter3; i++)
-            {
-
-                Pen p3 = new Pen(Color.Red, 1);
-                Graphics g3 = panel3.CreateGraphics();
-                draw.drawingGraphs(values_probe3_saved, hours_probe3_saved, minutes_probe3_saved, 
-                    i, p3, g3, panel3.Height, panel3.Width);
-            }
-            for (int i = 0; i < counter4; i++)
-            {
-                Pen p4 = new Pen(Color.Red, 1);
-                Graphics g4 = panel4.CreateGraphics();
-                draw.drawingGraphs(values_probe4_saved, hours_probe4_saved, minutes_probe4_saved, 
-                    i, p4, g4, panel4.Height, panel4.Width);
+                MessageBox.Show("Ne postoji merenje za zadati datum.");
             }
 
 

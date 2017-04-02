@@ -50,9 +50,9 @@ namespace Sonde2.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public string width2 {
+        public float width2 {
             get {
-                return ((string)(this["width2"]));
+                return ((float)(this["width2"]));
             }
             set {
                 this["width2"] = value;
@@ -62,9 +62,9 @@ namespace Sonde2.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public string width3 {
+        public float width3 {
             get {
-                return ((string)(this["width3"]));
+                return ((float)(this["width3"]));
             }
             set {
                 this["width3"] = value;
@@ -74,9 +74,9 @@ namespace Sonde2.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public string width4 {
+        public float width4 {
             get {
-                return ((string)(this["width4"]));
+                return ((float)(this["width4"]));
             }
             set {
                 this["width4"] = value;
@@ -85,10 +85,10 @@ namespace Sonde2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
-        public global::System.Drawing.Color ColorProbe1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Crvena")]
+        public string ColorProbe1 {
             get {
-                return ((global::System.Drawing.Color)(this["ColorProbe1"]));
+                return ((string)(this["ColorProbe1"]));
             }
             set {
                 this["ColorProbe1"] = value;
@@ -97,10 +97,10 @@ namespace Sonde2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
-        public global::System.Drawing.Color ColorProbe2 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Crvena")]
+        public string ColorProbe2 {
             get {
-                return ((global::System.Drawing.Color)(this["ColorProbe2"]));
+                return ((string)(this["ColorProbe2"]));
             }
             set {
                 this["ColorProbe2"] = value;
@@ -109,10 +109,10 @@ namespace Sonde2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
-        public global::System.Drawing.Color ColorProbe3 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Crvena")]
+        public string ColorProbe3 {
             get {
-                return ((global::System.Drawing.Color)(this["ColorProbe3"]));
+                return ((string)(this["ColorProbe3"]));
             }
             set {
                 this["ColorProbe3"] = value;
@@ -121,10 +121,10 @@ namespace Sonde2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
-        public global::System.Drawing.Color ColorProbe4 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Crvena")]
+        public string ColorProbe4 {
             get {
-                return ((global::System.Drawing.Color)(this["ColorProbe4"]));
+                return ((string)(this["ColorProbe4"]));
             }
             set {
                 this["ColorProbe4"] = value;

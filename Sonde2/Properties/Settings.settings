@@ -8,26 +8,26 @@
     <Setting Name="width1" Type="System.Single" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="width2" Type="System.String" Scope="User">
+    <Setting Name="width2" Type="System.Single" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="width3" Type="System.String" Scope="User">
+    <Setting Name="width3" Type="System.Single" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="width4" Type="System.String" Scope="User">
+    <Setting Name="width4" Type="System.Single" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="ColorProbe1" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Red</Value>
+    <Setting Name="ColorProbe1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Crvena</Value>
     </Setting>
-    <Setting Name="ColorProbe2" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Red</Value>
+    <Setting Name="ColorProbe2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Crvena</Value>
     </Setting>
-    <Setting Name="ColorProbe3" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Red</Value>
+    <Setting Name="ColorProbe3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Crvena</Value>
     </Setting>
-    <Setting Name="ColorProbe4" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Red</Value>
+    <Setting Name="ColorProbe4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Crvena</Value>
     </Setting>
   </Settings>
 </SettingsFile>
